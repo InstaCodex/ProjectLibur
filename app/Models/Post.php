@@ -10,7 +10,10 @@ use Illuminate\Support\Arr;
 class Post extends Model
 {
     use HasFactory;
+    
     protected $guarded = ['id'];
+
+    protected $with = ['penulis','category'];
 
     public function penulis(): BelongsTo{
         return $this->belongsTo(User::class);

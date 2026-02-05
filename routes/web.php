@@ -10,7 +10,7 @@ Route::get('/', function () {
     return view('home', ['title' => 'Home']);
 });
 Route::get('/posts', function () {
-    $posts = Post::all();
+    $posts = Post::latest()->get();
     return view('posts', ['title' => 'Blog', 'posts' => $posts, 'h2'=> 'Artikel Terbaru ']);
 });
 Route::get('/posts/{post:slug}', function (Post $post) {
