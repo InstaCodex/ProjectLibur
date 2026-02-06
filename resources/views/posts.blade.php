@@ -1,9 +1,14 @@
 <x-layout :title="$title">
     <div class="text-center mb-5">
         <h1 class="fw-bold">{{ $h2 }}</h1>
-        <p class="text-secondary">
-            Kumpulan artikel seputar sistem dan teknologi
-        </p>
+        <div class="d-flex justify-content-center mt-4">
+            <form class="d-flex w-50">
+                <input class="form-control me-2" type="search" placeholder="Cari artikel..." aria-label="Search" name="search" autocomplete="off" />
+                <button class="btn btn-outline-primary" type="submit">
+                    Search
+                </button>
+            </form>
+        </div>
     </div>
     <div class="row g-4">
         @foreach ($posts as $post)
@@ -14,7 +19,8 @@
                             alt="Pengenalan Sistem Informasi" />
                     </div>
                     <span class="badge bg-success position-absolute top-0 start-0 m-2">
-                        <a href="/kategori/{{ $post->category->slug }}" class="text-decoration-none text-white">{{ $post->category->name }}</a>
+                        <a href="/kategori/{{ $post->category->slug }}"
+                            class="text-decoration-none text-white">{{ $post->category->name }}</a>
                     </span>
 
                     <div class="card-body">
@@ -24,7 +30,8 @@
                             </h5>
                         </a>
                         <p class="text-muted small mb-2">
-                            <a href="/penulis/{{ $post->penulis->username }}" class="text-decoration-none text-dark">👤 <span class="fw-medium">{{ $post->penulis->name }}</span></a> •
+                            <a href="/penulis/{{ $post->penulis->username }}" class="text-decoration-none text-dark">👤
+                                <span class="fw-medium">{{ $post->penulis->name }}</span></a> •
                             <time datetime="2026-01-15">📅 15 Januari 2026</time>
                         </p>
                         <p class="card-text text-secondary">
