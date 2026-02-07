@@ -29,7 +29,7 @@ class Post extends Model
     public function scopeFilter(Builder $query, array $fillters): void
     {
         $query->when($fillters['search'] ?? false, function($query, $search) {
-            $query->where('judul', 'like', '%' . request('search') . '%');
+            $query->where('judul', 'like', '%' . $search . '%');
         });
         
         $query->when($fillters['category'] ?? false, function($query, $category){
