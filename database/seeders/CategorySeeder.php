@@ -20,7 +20,7 @@ class CategorySeeder extends Seeder
         ]);
         Category::create([
             'name' => 'Web Programming',
-            'slug' => 'web-desain',
+            'slug' => 'web-programming',
         ]);
         Category::create([
             'name' => 'Web Three',

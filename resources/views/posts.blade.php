@@ -3,6 +3,12 @@
         <h1 class="fw-bold">{{ $h2 }}</h1>
         <div class="d-flex justify-content-center mt-4">
             <form class="d-flex w-50">
+                @if (request('category'))
+                    <input type="hidden" name="category" value="{{ request('category') }}">
+                @endif
+                @if (request('penulis'))
+                    <input type="hidden" name="penulis" value="{{ request('penulis') }}">
+                @endif
                 <input class="form-control me-2" type="search" placeholder="Cari artikel..." aria-label="Search" name="search" autocomplete="off" />
                 <button class="btn btn-outline-primary" type="submit">
                     Search
@@ -19,7 +25,7 @@
                             alt="Pengenalan Sistem Informasi" />
                     </div>
                     <span class="badge bg-success position-absolute top-0 start-0 m-2">
-                        <a href="/kategori/{{ $post->category->slug }}"
+                        <a href="/posts?category={{ $post->category->slug }}"
                             class="text-decoration-none text-white">{{ $post->category->name }}</a>
                     </span>
 
@@ -30,7 +36,7 @@
                             </h5>
                         </a>
                         <p class="text-muted small mb-2">
-                            <a href="/penulis/{{ $post->penulis->username }}" class="text-decoration-none text-dark">👤
+                            <a href="/posts?penulis={{ $post->penulis->username }}" class="text-decoration-none text-dark">👤
                                 <span class="fw-medium">{{ $post->penulis->name }}</span></a> •
                             <time datetime="2026-01-15">📅 15 Januari 2026</time>
                         </p>
