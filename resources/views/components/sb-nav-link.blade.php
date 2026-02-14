@@ -7,6 +7,8 @@
     $cek = $aktif ? 'active' : '';
 @endphp
 
-<a {{ $attributes->merge(['class' => 'nav-link ' . $cek]) }} href="{{ $href }}">
-    {{ $slot }}
-</a>
+<li class="nav-item {{ $cek }}">
+    <a {{ $attributes->merge(['class' => 'nav-link']) }} href="{{ $href }}">
+        {{ $slot }}
+    </a>
+</li>

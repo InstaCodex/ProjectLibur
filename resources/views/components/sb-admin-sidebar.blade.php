@@ -12,12 +12,10 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item">
-        <x-sb-nav-link href="{{ route('dashboard') }}" :aktif="request()->is('dashboard')">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
-        </x-sb-nav-link>
-    </li>
+    <x-sb-nav-link href="{{ route('dashboard') }}" :aktif="request()->routeIs('dashboard')">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard</span>
+    </x-sb-nav-link>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
