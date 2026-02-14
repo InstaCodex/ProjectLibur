@@ -1,7 +1,6 @@
 <x-layouts.app-sb-admin>
     <!-- Content Row -->
     <div class="row">
-
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
@@ -51,9 +50,8 @@
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar"
-                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                            aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%"
+                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -160,11 +158,11 @@
         </div>
     </div>
 
-@push('scripts')
-    <!-- Page level plugins -->
-    <script src="{{ asset('assets/vendor/chart.js/Chart.min.js') }}"></script>
-    <!-- Page level custom scripts -->
-    <script src="{{ asset('assets/js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('assets/js/demo/chart-pie-demo.js') }}"></script>
-@endpush
+    @push('scripts')
+        <!-- Page level plugins -->
+        <script src="{{ asset('assets/vendor/chart.js/Chart.min.js') }}"></script>
+        <!-- Page level custom scripts -->
+        <script src="{{ asset('assets/js/demo/chart-area-demo.js') }}"></script>
+        <script src="{{ asset('assets/js/demo/chart-pie-demo.js') }}"></script>
+    @endpush
 </x-layouts.app-sb-admin>

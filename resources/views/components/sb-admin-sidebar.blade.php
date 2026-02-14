@@ -12,10 +12,12 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <x-sb-nav-link href="{{ route('dashboard') }}" :aktif="request()->routeIs('dashboard')">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span>
-    </x-sb-nav-link>
+    <li class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('dashboard') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -26,17 +28,17 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ request()->routeIs('data.artikel') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Components</span>
+            <span>Kelola Artikel</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="#">Component 1</a>
-                <a class="collapse-item" href="#">Component 2</a>
+                <h6 class="collapse-header">Menu Artikel:</h6>
+                <a class="collapse-item" href="{{ route('data.artikel') }}">Data Artikel</a>
+                <a class="collapse-item" href="#">Tambah Artikel</a>
             </div>
         </div>
     </li>
